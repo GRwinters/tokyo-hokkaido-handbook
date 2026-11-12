@@ -7,43 +7,29 @@
 - 适配 376px 起的手机与桌面，纵向单列滚动。
 - 打卡进度同样存在 localStorage。
 
+## 在线地址
+
+| 平台 | 地址 | 说明 |
+|---|---|---|
+| Cloudflare Pages | https://tokyo-hokkaido-handbook-bcn.pages.dev | 已接本仓库，推送到 `main` 自动重建 |
+| GitHub Pages | https://grwinters.github.io/tokyo-hokkaido-handbook/ | 备用地址，同样自动重建 |
+
+> Cloudflare 项目名 `tokyo-hokkaido-handbook` 对应的 `*.pages.dev` 子域已被占用，Cloudflare 自动分配了 `-bcn` 后缀。若想换成更短的地址，需要在 Cloudflare 里新建项目（项目名决定子域，创建后不可改）。
+
 ## 目录
 
 ```
 index.html    # 全部内容
-.nojekyll     # 让 GitHub Pages 直接按静态文件发布（不做 Jekyll 处理）
+README.md     # 本文件
 ```
-
-## 部署
-
-### Cloudflare Pages（推荐，免费、公开可读）
-
-方式一 · 连接本仓库（推送到 GitHub 后自动构建）
-
-1. Cloudflare 控制台 → Workers & Pages → Create → Pages → Connect to Git
-2. 选择本仓库 → 框架预设 `None`，构建命令留空，输出目录 `/`
-3. 保存并部署，得到 `https://<项目名>.pages.dev`
-
-方式二 · 本地直传（不依赖 Git）
-
-```bash
-npx wrangler pages deploy . --project-name=tokyo-hokkaido
-```
-
-### GitHub Pages（可选）
-
-仓库 Settings → Pages → Source 选 `Deploy from a branch` → 分支 `main`、目录 `/`。
-地址为 `https://<用户名>.github.io/<仓库名>/`。
 
 ## 更新内容
 
-直接编辑 `index.html`：
+直接编辑 `index.html` 后推送到 `main` 分支，两个平台都会自动重新部署：
 
 - 行程数据在 `<script>` 里的 `DAYS` 数组（每天一个对象，含 items / stay）
 - 景点介绍在 `PLACES`（一句话推荐、必看点、体验建议）
 - 票据、住宿、待办、贴士分别是 `TICKETS` / `STAYS` / `TODOS` / `TIPS`
-
-改完提交推送，Cloudflare Pages 会自动重新部署。
 
 ## 说明
 
