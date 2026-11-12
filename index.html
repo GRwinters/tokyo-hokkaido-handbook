@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>东京 → 北海道 · 旅行手册</title>
+<meta name="theme-color" content="#f6f1e6" id="themeColor">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="东京→北海道">
+<meta name="description" content="2026年12月14日—20日，东京到北海道七天旅行手册：行程、地图、交通、住宿与待办。">
+<style>
+/* ========== 主题变量 ========== */
+:root{
+  --bg:#f6f1e6; --bg2:#fffdf8; --bg3:#efe7d6;
+  --ink:#23201b; --ink2:#4f4839; --muted:#8b8070;
+  --line:#e3dac7; --line2:#efe9da;
+  --accent:#b5462f; --accent-soft:#f6e4de;
+  --blue:#3d6f8e; --blue-soft:#e3eef3;
+  --green:#4d7357; --green-soft:#e5eee6;
+  --amber:#9a6b1e; --amber-soft:#f7ecd5;
+  --sea:#e9efee; --land:#f4eddd; --land2:#efe6d2; --land-line:#dbcdb0;
+  --shadow:0 1px 2px rgba(60,50,35,.05),0 14px 30px -22px rgba(60,50,35,.45);
+  --shadow2:0 20px 50px -24px rgba(40,32,20,.35);
+  /* 插画 */
+  --sky1:#d9e8ef; --sky2:#f7efe2;
+  --sun:#f0cd92; --sun-glow:#f6dcae;
+  --cloud:#ffffff; --cloud-op:.85;
+  --mtn-far:#ccd9da; --mtn-mid:#b6c7c7; --mtn-near:#9cb3b3;
+  --snow-cap:#fdfcf7;
+  --snow1:#fbfaf4; --snow2:#f3efe2; --snow3:#e7e1d0;
+  --water:#b5d2da; --water2:#a2c5ce;
+  --tree:#6d8a70; --tree2:#55715b; --trunk:#8a6b52;
+  --lm1:#cd5240; --lm2:#fdfbf3; --lm3:#6f5b48; --lm4:#879f95;
+  --line-ink:#5c5245; --win:#cfd8d6; --steam:#dfe8ea; --rock:#77868c;
+}
+[data-theme="dark"]{
+  --bg:#11151b; --bg2:#181e26; --bg3:#1e2530;
+  --ink:#eee8db; --ink2:#c3bcab; --muted:#8b8477;
+  --line:#2a323d; --line2:#222a35;
+  --accent:#e07a63; --accent-soft:#2b1d1a;
+  --blue:#7fb4cd; --blue-soft:#152430;
+  --green:#7fae8b; --green-soft:#152219;
+  --amber:#d9a95e; --amber-soft:#241c0f;
+  --sea:#0c141d; --land:#20303f; --land2:#1b2634; --land-line:#31455a;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 16px 34px -24px rgba(0,0,0,.9);
+  --shadow2:0 24px 60px -26px rgba(0,0,0,.9);
+  --sky1:#0a1120; --sky2:#1c2940;
+  --sun:#e9e2c9; --sun-glow:#2a3a55;
+  --cloud:#26344c; --cloud-op:.8;
+  --mtn-far:#1b2a3f; --mtn-mid:#16233a; --mtn-near:#101c30;
+  --snow-cap:#33465e;
+  --snow1:#2b3d55; --snow2:#24344a; --snow3:#1d2b3f;
+  --water:#122a44; --water2:#17334f;
+  --tree:#173226; --tree2:#112518; --trunk:#2a2018;
+  --lm1:#8f3b30; --lm2:#33465f; --lm3:#1c2a3c; --lm4:#2c4644;
+  --line-ink:#0a1220; --win:#ffcf7a; --steam:#3c4f66; --rock:#1d2a38;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:15px;line-height:1.7;letter-spacing:.01em;
+  transition:background .35s ease,color .35s ease;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+h1,h2,h3,h4{margin:0;font-weight:600;line-height:1.35}
+p{margin:0 0 .8em}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.serif{font-family:"Songti SC","STSong","SimSun","Noto Serif SC",serif}
+.wrap{max-width:1060px;margin:0 auto;padding:0 18px}
+
+/* ========== 顶栏 ========== */
+.bar{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+@supports not (background:color-mix(in srgb,#fff,transparent)){.bar{background:var(--bg)}}
+.bar-in{max-width:1060px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:10px;height:56px}
+.brand{font-family:"Songti SC","STSong",serif;font-size:15px;letter-spacing:.06em;white-space:nowrap}
+.brand .ar{color:var(--accent);margin:0 4px}
+.bar-nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.bar-nav::-webkit-scrollbar{display:none}
+.bar-nav a{padding:7px 9px;font-size:12.5px;color:var(--muted);border-radius:7px;white-space:nowrap}
+.bar-nav a:hover{color:var(--ink);background:var(--bg3)}
+.tbtn{
+  display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;
+  border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 10px;
+  font-size:12.5px;color:var(--ink2);background:var(--bg2);height:34px;
+  transition:.2s;
+}
+.tbtn:hover{border-color:var(--accent);color:var(--accent)}
+.tbtn .ic{font-size:14px;line-height:1}
+@media (max-width:720px){
+  .bar-nav{display:none}
+  .bar-in{height:52px}
+  .tbtn{margin-left:auto}
+}
+
+/* ========== 头图 ========== */
+.hero{position:relative;background:var(--bg2);border-bottom:1px solid var(--line)}
+.hero-art{width:100%;height:auto;display:block}
+.hero-art .stars{opacity:0;transition:opacity .4s}
+[data-theme="dark"] .hero-art .stars{opacity:1}
+[data-theme="dark"] .hero-art #sunG{opacity:0}
+.hero-art #sunG{transition:opacity .4s}
+.hero-art #moonG{opacity:0;transition:opacity .4s}
+[data-theme="dark"] .hero-art #moonG{opacity:1}
+.flake{animation:fall 11s linear infinite;transform-box:fill-box}
+@keyframes fall{
+  0%{transform:translateY(-16px);opacity:0}
+  10%{opacity:.9}
+  90%{opacity:.75}
+  100%{transform:translateY(120px);opacity:0}
+}
+.masthead{padding:26px 18px 22px;max-width:1060px;margin:0 auto}
+.masthead .kick{font-size:10.5px;letter-spacing:.32em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.masthead h1{
+  font-family:"Songti SC","STSong","SimSun",serif;
+  font-size:clamp(30px,7.2vw,50px);line-height:1.15;letter-spacing:.02em;font-weight:600;
+}
+.masthead h1 .ar{color:var(--accent);font-weight:300;margin:0 .1em}
+.masthead .sub{margin-top:10px;color:var(--ink2);font-size:13.5px;letter-spacing:.04em}
+.masthead .sub span{color:var(--muted)}
+.ruler{height:1px;background:var(--line);margin:18px 0 0}
+
+/* ========== 区块通用 ========== */
+.sec{padding:40px 0 6px}
+.sec + .sec{border-top:1px solid var(--line2)}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.sec-h .no{font-family:"Songti SC",serif;font-size:12px;color:var(--accent);letter-spacing:.12em;border-bottom:1px solid var(--accent);padding-bottom:2px}
+.sec-h h2{font-family:"Songti SC","STSong","SimSun",serif;font-size:21px;letter-spacing:.06em}
+.sec-h .hint{margin-left:auto;font-size:12px;color:var(--muted);text-align:right}
+.sec-sub{color:var(--muted);font-size:12.5px;margin:0 0 18px}
+@media (max-width:620px){.sec{padding:32px 0 4px}.sec-h .hint{display:none}}
+
+/* ========== 倒计时 / 时钟 ========== */
+.clock-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+@media (max-width:760px){.clock-grid{grid-template-columns:1fr}}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.card h3{font-size:13px;letter-spacing:.14em;color:var(--muted);font-weight:600;text-transform:uppercase;margin-bottom:12px}
+.cd{display:flex;gap:8px}
+.cd .u{flex:1;text-align:center;background:var(--bg3);border-radius:12px;padding:10px 4px 8px}
+.cd .u b{display:block;font-family:"Songti SC",serif;font-size:clamp(24px,6vw,34px);font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.cd .u i{display:block;font-style:normal;font-size:10.5px;letter-spacing:.16em;color:var(--muted);margin-top:4px}
+.cd-note{font-size:11.5px;color:var(--muted);margin-top:12px}
+.tzs{display:grid;gap:10px}
+.tz-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:var(--bg3)}
+.tz-row .nm{font-size:12.5px;color:var(--ink2);line-height:1.3}
+.tz-row .nm small{display:block;font-size:10.5px;color:var(--muted);letter-spacing:.06em}
+.tz-row time{margin-left:auto;font-family:"Songti SC",serif;font-size:22px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.tz-row .off{font-size:10.5px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+.tz-tip{font-size:11.5px;color:var(--muted);margin:10px 0 0}
+
+/* ========== 地图 ========== */
+.map-ctrl{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}
+.map-ctrl::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto;border:1px solid var(--line);border-radius:999px;padding:6px 12px;
+  font-size:12px;color:var(--ink2);background:var(--bg2);transition:.18s;white-space:nowrap;
+}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg2);border-color:var(--ink)}
+.chip.all{background:transparent;border-style:dashed}
+.chip.all[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;border-style:solid}
+.map-stage{
+  position:relative;width:100%;aspect-ratio:1000/740;max-height:640px;overflow:hidden;
+  background:var(--sea);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+  touch-action:manipulation;
+}
+.map-inner{position:absolute;inset:0;transform-origin:0 0;transition:transform .65s cubic-bezier(.22,.9,.28,1)}
+.map-svg{width:100%;height:100%}
+.map-labels{position:absolute;inset:0;pointer-events:none}
+.mlab{
+  position:absolute;pointer-events:auto;font-size:10.5px;line-height:1;letter-spacing:.02em;
+  padding:3px 6px;border-radius:5px;white-space:nowrap;color:var(--ink);
+  background:color-mix(in srgb,var(--bg2) 74%,transparent);
+  border:1px solid color-mix(in srgb,var(--line) 70%,transparent);
+  box-shadow:0 1px 2px rgba(0,0,0,.08);
+  transition:left .62s cubic-bezier(.22,.9,.28,1),top .62s cubic-bezier(.22,.9,.28,1),opacity .3s,transform .2s;
+}
+@supports not (background:color-mix(in srgb,#fff,transparent)){.mlab{background:var(--bg2)}}
+.mlab:hover{border-color:var(--accent);color:var(--accent)}
+.mlab.down{transform:translate(-50%,9px)}
+.mlab.up{transform:translate(-50%,calc(-100% - 9px))}
+.mlab.left{transform:translate(calc(-100% - 9px),-50%)}
+.mlab.right{transform:translate(9px,-50%)}
+.land{fill:var(--land);stroke:var(--land-line);stroke-width:1.2}
+.land2{fill:var(--land2);stroke:none}
+.sea-label{fill:var(--muted);font-size:11px;letter-spacing:.5em;opacity:.5}
+.node{cursor:pointer}
+.node circle{fill:var(--bg2);stroke:var(--node-c,var(--blue));stroke-width:2.4;transition:.25s}
+.node.major circle{stroke-width:3}
+.node:hover circle{fill:var(--node-c,var(--blue));fill-opacity:.18}
+.node .halo{fill:var(--node-c,var(--blue));opacity:.1;stroke:none}
+.route{fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:6 5;opacity:.95}
+[data-theme="dark"] .route{filter:brightness(1.35) saturate(1.05)}
+.map-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:10px}
+.map-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.map-hint{font-size:11.5px;color:var(--muted);margin-top:8px}
+
+/* ========== 时间轴 ========== */
+.days{display:grid;gap:12px}
+.day{border:1px solid var(--line);border-radius:16px;background:var(--bg2);overflow:hidden;box-shadow:var(--shadow)}
+.day-head{
+  width:100%;display:flex;align-items:center;gap:12px;padding:14px 16px;text-align:left;
+  border-bottom:1px solid transparent;transition:.2s;
+}
+.day-head:hover{background:var(--bg3)}
+.day.open .day-head{border-bottom-color:var(--line2)}
+.dnum{font-family:"Songti SC",serif;font-size:13px;color:#fff;background:var(--dc,var(--accent));border-radius:7px;padding:3px 7px;letter-spacing:.06em}
+.dmeta{display:flex;flex-direction:column;line-height:1.35}
+.dmeta b{font-family:"Songti SC",serif;font-size:15px;font-weight:600;letter-spacing:.04em}
+.dmeta em{font-style:normal;font-size:11.5px;color:var(--muted)}
+.dprog{margin-left:auto;font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-variant-numeric:tabular-nums}
+.dprog.full{color:var(--green);border-color:var(--green)}
+.dchev{color:var(--muted);font-size:11px;transition:transform .25s;width:12px;text-align:center}
+.day.open .dchev{transform:rotate(180deg)}
+.day-body{display:none;padding:6px 16px 16px}
+.day.open .day-body{display:block}
+
+.items{position:relative}
+.item{display:grid;grid-template-columns:56px 12px 1fr;gap:0 10px;padding:10px 0 0}
+.it-time{padding-top:2px;text-align:right}
+.it-time .t{display:block;font-family:"Songti SC",serif;font-size:13.5px;letter-spacing:.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.it-time .tz{display:block;font-size:9px;letter-spacing:.1em;color:var(--muted);margin-top:2px}
+.it-rail{position:relative}
+.it-rail::before{content:"";position:absolute;left:50%;top:8px;bottom:-12px;width:1px;background:var(--line);transform:translateX(-50%)}
+.item:last-child .it-rail::before{bottom:6px}
+.it-rail i{position:absolute;left:50%;top:6px;width:8px;height:8px;border-radius:50%;background:var(--bg2);border:2px solid var(--dc,var(--accent));transform:translateX(-50%);box-sizing:content-box}
+.it-body{padding-bottom:12px;position:relative}
+.it-head h4{font-size:14.5px;font-weight:600;line-height:1.5;padding-right:32px}
+.chk{
+  position:absolute;right:0;top:1px;width:26px;height:26px;display:grid;place-items:center;
+  font-size:12px;line-height:1;color:var(--muted);
+  border:1px solid var(--line);border-radius:50%;transition:.18s;
+}
+.chk:hover{border-color:var(--green);color:var(--green)}
+.chk[aria-pressed="true"]{background:var(--green-soft);border-color:var(--green);color:var(--green);font-weight:700}
+.it-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.tag{font-size:10.5px;letter-spacing:.04em;padding:1.5px 7px;border-radius:5px;border:1px solid var(--line);color:var(--muted);background:var(--bg3)}
+.tag.warn{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 40%,transparent);background:var(--amber-soft)}
+.tag.book{color:var(--blue);border-color:color-mix(in srgb,var(--blue) 40%,transparent);background:var(--blue-soft)}
+.tag.flight{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 40%,transparent);background:var(--accent-soft)}
+.tag.act{cursor:pointer}
+.tag.act:hover{color:var(--accent);border-color:var(--accent)}
+@supports not (border-color:color-mix(in srgb,#fff,transparent)){
+  .tag.warn{border-color:#d9c08a}.tag.book{border-color:#9dc0d0}.tag.flight{border-color:#dba99e}
+}
+.it-note{font-size:12.5px;color:var(--ink2);margin:7px 0 0;line-height:1.65}
+.it-note .muted{color:var(--muted)}
+.item.done .it-body{opacity:.45}
+.item.done .it-head h4{text-decoration:line-through;text-decoration-thickness:1px}
+.item.done .it-rail i{background:var(--green);border-color:var(--green)}
+
+.leg{margin:0 0 0 78px;padding:2px 0 2px 0;display:flex;align-items:center;gap:8px;color:var(--muted);font-size:11px;position:relative}
+.leg::before{content:"";position:absolute;left:-21px;top:0;bottom:0;width:1px;background:var(--line);opacity:.7}
+.leg .cap{border:1px dashed var(--line);border-radius:999px;padding:1px 9px;background:var(--bg2)}
+@media (max-width:520px){
+  .item{grid-template-columns:48px 10px 1fr;gap:0 8px}
+  .it-time .t{font-size:12px}
+  .leg{margin-left:66px}
+}
+
+.day-foot{display:grid;gap:10px;margin-top:6px;padding-top:12px;border-top:1px dashed var(--line)}
+.stay{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink2);background:var(--bg3);border-radius:10px;padding:9px 12px}
+.stay b{font-weight:600}
+.stay .st{margin-left:auto;font-size:10.5px;color:var(--amber);border:1px dashed color-mix(in srgb,var(--amber) 45%,transparent);border-radius:5px;padding:1px 6px;white-space:nowrap}
+.mini{width:230px;height:132px;max-width:100%;border-radius:10px;background:var(--sea);border:1px solid var(--line2)}
+
+/* ========== 票据 / 住宿 ========== */
+.tick{display:grid;gap:10px}
+.tick .row{
+  display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;
+  background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--dc,var(--line));
+  border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);
+}
+.tick .row .rt{font-size:13.5px;font-weight:600}
+.tick .row .rd{grid-column:1/-1;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+.tick .row .rd span b{font-weight:500;color:var(--ink2)}
+.pill{font-size:10.5px;border-radius:999px;padding:2px 8px;border:1px dashed var(--accent);color:var(--accent);white-space:nowrap}
+.pill.ok{border-style:solid;border-color:var(--green);color:var(--green)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--bg2);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:520px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line2);vertical-align:top}
+th{font-size:11px;letter-spacing:.1em;color:var(--muted);font-weight:600;background:var(--bg3);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td small{display:block;color:var(--muted);font-size:11px}
+.swipe{display:none;font-size:11px;color:var(--muted);margin:0 0 6px}
+@media (max-width:620px){.swipe{display:block}}
+
+/* ========== 待办 / 贴士 ========== */
+.todo-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
+@media (max-width:700px){.todo-grid{grid-template-columns:1fr}}
+.todo{display:flex;gap:9px;align-items:flex-start;padding:7px 9px;border-radius:9px;cursor:pointer;font-size:13px;color:var(--ink2);transition:background .15s}
+.todo:hover{background:var(--bg3)}
+.todo input{appearance:none;-webkit-appearance:none;width:15px;height:15px;flex:0 0 15px;margin:4px 0 0;border-radius:4px;border:1.5px solid var(--muted);background:var(--bg2);cursor:pointer;position:relative}
+.todo input:checked{background:var(--green);border-color:var(--green)}
+.todo input:checked::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.todo input:checked + span{color:var(--muted);text-decoration:line-through}
+.todo span em{font-style:normal;font-size:10.5px;color:var(--accent);margin-left:5px}
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:820px){.tips{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.tips{grid-template-columns:1fr}}
+.tip{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+.tip h4{font-size:12.5px;letter-spacing:.04em;margin-bottom:4px}
+.tip p{font-size:12px;color:var(--ink2);margin:0;line-height:1.6}
+
+/* ========== 弹层 ========== */
+.mask{position:fixed;inset:0;background:rgba(20,16,10,.42);opacity:0;pointer-events:none;transition:opacity .28s;z-index:80}
+.mask.on{opacity:1;pointer-events:auto}
+.sheet{
+  position:fixed;z-index:90;left:50%;bottom:0;width:min(560px,100%);
+  transform:translate(-50%,110%);transition:transform .34s cubic-bezier(.2,.9,.3,1);
+  background:var(--bg2);border:1px solid var(--line);border-radius:18px 18px 0 0;
+  box-shadow:var(--shadow2);padding:18px 20px calc(20px + env(safe-area-inset-bottom));max-height:80vh;overflow:auto;
+}
+.sheet.on{transform:translate(-50%,0)}
+@media (min-width:760px){
+  .sheet{bottom:auto;top:50%;transform:translate(-50%,-42%) scale(.96);opacity:0;border-radius:18px}
+  .sheet.on{transform:translate(-50%,-50%) scale(1);opacity:1}
+}
+.sheet-x{position:absolute;right:12px;top:10px;width:30px;height:30px;border-radius:50%;color:var(--muted);font-size:15px}
+.sheet-x:hover{background:var(--bg3);color:var(--ink)}
+.sheet .place{
+  display:inline-flex;align-items:center;gap:6px;font-family:"Songti SC",serif;font-size:19px;
+  letter-spacing:.04em;padding-bottom:8px;border-bottom:1px solid var(--line);margin:0 30px 12px 0;color:var(--ink);
+}
+.sheet .place .go{font-size:11px;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:1px 7px;font-family:inherit}
+.sheet .one{font-size:13.5px;color:var(--ink2);margin-bottom:14px}
+.sheet h4{font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin:12px 0 6px}
+.sheet .must li{font-size:13px;color:var(--ink2);padding-left:14px;position:relative;margin:3px 0}
+.sheet .must li::before{content:"";position:absolute;left:2px;top:.62em;width:4px;height:4px;border-radius:50%;background:var(--accent)}
+.sheet .tipbox{font-size:12.5px;color:var(--ink2);background:var(--bg3);border-radius:10px;padding:10px 12px;line-height:1.65}
+
+/* ========== 页脚 ========== */
+footer{border-top:1px solid var(--line);margin-top:34px;padding:24px 0 40px;color:var(--muted);font-size:11.5px;line-height:1.8}
+footer .fin{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:10px}
+footer b{color:var(--ink2);font-weight:600}
+footer .note{max-width:760px}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- 顶栏 -->
+<header class="bar">
+  <div class="bar-in">
+    <div class="brand">东京<span class="ar">→</span>北海道</div>
+    <nav class="bar-nav">
+      <a href="#clock">倒计时</a>
+      <a href="#map">地图</a>
+      <a href="#plan">行程</a>
+      <a href="#tickets">票据</a>
+      <a href="#stay">住宿</a>
+      <a href="#todo">待办</a>
+    </nav>
+    <button class="tbtn" id="themeBtn" aria-label="切换深浅色">
+      <span class="ic" id="themeIcon">☾</span><span id="themeTxt">夜间</span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ========== 1. 头图 ========== -->
+<section class="hero">
+  <svg class="hero-art" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet" role="img" aria-label="手绘插画：东京塔、五棱郭塔、地狱谷、洞爷湖与有珠山、札幌钟楼、小樽运河与新千岁机场组成的冬日旅途">
+    <defs>
+      <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="var(--sky1)"/>
+        <stop offset="72%" stop-color="var(--sky2)"/>
+        <stop offset="100%" stop-color="var(--sky2)"/>
+      </linearGradient>
+      <radialGradient id="glowG"><stop offset="0" stop-color="var(--sun-glow)" stop-opacity=".95"/><stop offset="1" stop-color="var(--sun-glow)" stop-opacity="0"/></radialGradient>
+      <linearGradient id="lakeG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="var(--water2)"/><stop offset="1" stop-color="var(--water)"/>
+      </linearGradient>
+      <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4"/></filter>
+      <mask id="moonMask">
+        <circle cx="1036" cy="82" r="24" fill="#fff"/>
+        <circle cx="1049" cy="71" r="22" fill="#000"/>
+      </mask>
+    </defs>
+
+    <rect width="1200" height="500" fill="url(#skyG)"/>
+
+    <!-- 星空（夜间） -->
+    <g class="stars" fill="#fff">
+      <circle cx="90" cy="60" r="1.6" opacity=".8"/><circle cx="150" cy="110" r="1.1" opacity=".6"/>
+      <circle cx="250" cy="52" r="1.9" opacity=".9"/><circle cx="330" cy="120" r="1.2" opacity=".5"/>
+      <circle cx="420" cy="70" r="1.5" opacity=".7"/><circle cx="500" cy="40" r="1.2" opacity=".8"/>
+      <circle cx="610" cy="96" r="1.7" opacity=".6"/><circle cx="700" cy="54" r="1.1" opacity=".85"/>
+      <circle cx="790" cy="108" r="1.4" opacity=".5"/><circle cx="860" cy="48" r="1.8" opacity=".8"/>
+      <circle cx="940" cy="96" r="1.2" opacity=".6"/><circle cx="1100" cy="70" r="1.5" opacity=".7"/>
+      <circle cx="1150" cy="130" r="1.1" opacity=".6"/><circle cx="60" cy="150" r="1.3" opacity=".5"/>
+      <circle cx="560" cy="130" r="1" opacity=".5"/><circle cx="1010" cy="140" r="1.2" opacity=".55"/>
+    </g>
+    <g id="sunG">
+      <circle cx="1036" cy="82" r="86" fill="url(#glowG)"/>
+      <circle cx="1036" cy="82" r="27" fill="var(--sun)" opacity=".95"/>
+    </g>
+    <g id="moonG">
+      <circle cx="1036" cy="82" r="92" fill="url(#glowG)"/>
+      <circle cx="1036" cy="82" r="24" fill="var(--sun)" mask="url(#moonMask)"/>
+      <circle cx="1036" cy="82" r="24" fill="var(--sun)" opacity=".12"/>
+    </g>
+
+    <!-- 云 -->
+    <g fill="var(--cloud)" opacity="var(--cloud-op)">
+      <g><ellipse cx="186" cy="86" rx="50" ry="16"/><ellipse cx="224" cy="77" rx="30" ry="13"/><ellipse cx="150" cy="79" rx="24" ry="11"/></g>
+      <g opacity=".75" transform="translate(-40,6)"><ellipse cx="560" cy="58" rx="34" ry="11"/><ellipse cx="586" cy="51" rx="21" ry="10"/></g>
+      <g opacity=".6"><ellipse cx="880" cy="110" rx="30" ry="9"/><ellipse cx="902" cy="104" rx="18" ry="8"/></g>
+    </g>
+
+    <!-- 远山 -->
+    <g filter="url(#rough)">
+      <path d="M0,312 C50,290 96,240 160,246 C224,252 248,300 310,296 C372,292 392,214 470,214 C548,214 566,300 640,298 C714,296 736,226 812,228 C888,230 908,302 980,300 C1052,298 1074,236 1140,244 C1174,248 1192,268 1200,282 L1200,330 L0,330 Z" fill="var(--mtn-far)"/>
+      <path d="M430,258 C446,232 458,216 470,214 C482,216 494,232 510,258 C492,248 486,243 470,243 C454,243 448,248 430,258 Z" fill="var(--snow-cap)" opacity=".95"/>
+      <path d="M0,322 C60,306 118,286 190,292 C262,298 292,326 370,324 C448,322 480,292 556,296 C632,300 664,328 740,326 C816,324 852,294 928,298 C1004,302 1040,328 1112,324 C1156,322 1182,314 1200,310 L1200,344 L0,344 Z" fill="var(--mtn-mid)"/>
+      <path d="M0,318 C120,306 240,330 360,320 C480,310 600,332 720,322 C840,312 960,332 1080,320 C1130,315 1172,318 1200,316 L1200,500 L0,500 Z" fill="var(--snow1)"/>
+      <path d="M0,372 C150,356 300,382 460,372 C620,362 760,386 920,376 C1050,368 1140,378 1200,372 L1200,500 L0,500 Z" fill="var(--snow2)"/>
+    </g>
+
+    <!-- 远树 -->
+    <g fill="var(--tree2)" opacity=".45">
+      <g transform="translate(350,424) scale(.42)"><path d="M0,-70 L-22,-24 L-11,-24 L-28,6 L28,6 L11,-24 L22,-24 Z"/></g>
+      <g transform="translate(706,424) scale(.36)"><path d="M0,-70 L-22,-24 L-11,-24 L-28,6 L28,6 L11,-24 L22,-24 Z"/></g>
+      <g transform="translate(868,424) scale(.4)"><path d="M0,-70 L-22,-24 L-11,-24 L-28,6 L28,6 L11,-24 L22,-24 Z"/></g>
+    </g>
+
+    <!-- 地平线树林 -->
+    <g fill="var(--tree2)" opacity=".3">
+      <g transform="translate(42,348)"><path d="M0,-20 L-5.5,0 L5.5,0 Z"/></g><g transform="translate(64,350)"><path d="M0,-26 L-7,0 L7,0 Z"/></g>
+      <g transform="translate(160,349)"><path d="M0,-22 L-6,0 L6,0 Z"/></g><g transform="translate(236,348)"><path d="M0,-17 L-4.5,0 L4.5,0 Z"/></g>
+      <g transform="translate(374,350)"><path d="M0,-25 L-6.5,0 L6.5,0 Z"/></g><g transform="translate(504,349)"><path d="M0,-21 L-5.5,0 L5.5,0 Z"/></g>
+      <g transform="translate(686,350)"><path d="M0,-26 L-7,0 L7,0 Z"/></g><g transform="translate(816,348)"><path d="M0,-18 L-5,0 L5,0 Z"/></g>
+      <g transform="translate(946,350)"><path d="M0,-24 L-6.5,0 L6.5,0 Z"/></g><g transform="translate(1028,349)"><path d="M0,-20 L-5,0 L5,0 Z"/></g>
+      <g transform="translate(1156,350)"><path d="M0,-24 L-6,0 L6,0 Z"/></g>
+    </g>
+
+    <!-- 地面投影 -->
+    <g fill="var(--line-ink)" opacity=".07">
+      <ellipse cx="112" cy="431" rx="30" ry="5.5"/>
+      <ellipse cx="292" cy="431" rx="24" ry="5"/>
+      <ellipse cx="452" cy="431" rx="90" ry="8"/>
+      <ellipse cx="622" cy="431" rx="60" ry="6.5"/>
+      <ellipse cx="782" cy="431" rx="57" ry="6.5"/>
+      <ellipse cx="948" cy="431" rx="92" ry="7"/>
+      <ellipse cx="1098" cy="431" rx="57" ry="6.5"/>
+    </g>
+
+    <!-- 1 东京塔 -->
+    <g transform="translate(112,0)" fill="none" stroke="var(--lm1)" stroke-linecap="round">
+      <path d="M-26,430 L-5,272 M26,430 L5,272" stroke-width="3.6"/>
+      <path d="M-21,398 h42 M-17,370 h34 M-13,342 h26 M-9,316 h18 M-6,292 h12" stroke-width="2.6"/>
+      <path d="M-5,272 L-3,246 M5,272 L3,246" stroke-width="3"/>
+      <rect x="-15" y="258" width="30" height="13" rx="2" fill="var(--lm2)" stroke="var(--lm1)" stroke-width="2"/>
+      <rect x="-8" y="242" width="16" height="9" rx="1.5" fill="var(--lm2)" stroke="var(--lm1)" stroke-width="1.8"/>
+      <line x1="0" y1="242" x2="0" y2="218" stroke-width="2.2"/>
+      <circle cx="0" cy="215" r="3.4" fill="var(--lm1)" stroke="none"/>
+      <circle cx="0" cy="215" r="8" fill="var(--lm1)" stroke="none" opacity=".15"/>
+    </g>
+
+    <!-- 2 五棱郭塔 + 星形城郭 -->
+    <g transform="translate(292,0)">
+      <rect x="-9" y="318" width="18" height="112" fill="var(--lm4)"/>
+      <path d="M-9,336 h18 M-9,356 h18 M-9,376 h18 M-9,396 h18" stroke="var(--snow-cap)" stroke-width="1.6" opacity=".35"/>
+      <rect x="-9" y="318" width="5" height="112" fill="var(--snow-cap)" opacity=".14"/>
+      <path d="M-24,318 L24,318 L19,300 L-19,300 Z" fill="var(--lm4)"/>
+      <rect x="-19" y="302" width="38" height="9" fill="var(--win)" opacity=".95"/>
+      <path d="M-24,318 L24,318" stroke="var(--line-ink)" stroke-width="1.6" opacity=".25"/>
+      <path d="M-19,300 L0,284 L19,300 Z" fill="var(--lm4)"/>
+      <line x1="0" y1="284" x2="0" y2="264" stroke="var(--line-ink)" stroke-width="1.8"/>
+      <path d="M0,-20 L5.9,-6.9 L19,-6.2 L9,2.2 L12.4,16 L0,8.6 L-12.4,16 L-9,2.2 L-19,-6.2 L-5.9,-6.9 Z"
+            transform="translate(-58,416) scale(1.25)" fill="none" stroke="var(--lm4)" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="-58" cy="416" r="2.2" fill="var(--lm4)"/>
+    </g>
+
+    <!-- 3 地狱谷 -->
+    <g transform="translate(452,0)">
+      <path d="M-92,430 L-76,394 L-62,400 L-46,362 L-26,374 L-6,352 L14,368 L30,354 L48,384 L64,376 L84,406 L92,430 Z" fill="var(--rock)"/>
+      <path d="M-46,362 l6,8 6,-8 Z M-6,352 l6,9 6,-9 Z M30,354 l6,9 6,-9 Z" fill="var(--snow-cap)" opacity=".85"/>
+      <path d="M-42,430 L-28,392 L-10,378 L8,384 L26,374 L42,400 L54,430 Z" fill="var(--mtn-far)" opacity=".28"/>
+      <path d="M-56,404 l12,-7 M-20,392 l12,-6 M22,392 l11,-7" stroke="var(--line-ink)" stroke-width="1.4" opacity=".18" stroke-linecap="round"/>
+      <path d="M-16,350 C-28,326 -10,310 -20,288" stroke="var(--steam)" stroke-width="7" stroke-linecap="round" fill="none" opacity=".55"/>
+      <path d="M6,354 C-2,334 12,320 4,300" stroke="var(--steam)" stroke-width="5" stroke-linecap="round" fill="none" opacity=".36"/>
+      <path d="M32,366 C26,348 40,336 34,318" stroke="var(--steam)" stroke-width="4" stroke-linecap="round" fill="none" opacity=".24"/>
+      <g transform="translate(72,430)">
+        <path d="M-11,0 v-26 M11,0 v-26" stroke="var(--lm1)" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M-16,-24 h32" stroke="var(--lm1)" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M-12,-30 h24" stroke="var(--lm1)" stroke-width="2.6" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- 4 有珠山 + 洞爷湖 -->
+    <g transform="translate(622,0)">
+      <path d="M-54,430 C-42,394 -22,366 0,362 C22,366 42,394 54,430 Z" fill="var(--mtn-mid)"/>
+      <path d="M-12,368 C-6,362 6,362 12,368" stroke="var(--snow-cap)" stroke-width="2.4" fill="none" opacity=".55" stroke-linecap="round"/>
+      <ellipse cx="0" cy="363" rx="11" ry="3.4" fill="var(--rock)" opacity=".5"/>
+      <path d="M0,357 C-9,344 4,333 -4,318" stroke="var(--steam)" stroke-width="3" stroke-linecap="round" fill="none" opacity=".3"/>
+      <path d="M-96,452 C-96,443 -58,438 -18,438 C22,438 62,440 96,446 C105,449 107,458 100,464 C78,474 28,478 -20,478 C-62,478 -88,474 -96,466 Z" fill="url(#lakeG)" stroke="var(--snow-cap)" stroke-width="1.5" stroke-opacity=".5"/>
+      <path d="M-48,458 h25 M-4,466 h33 M40,456 h21" stroke="var(--snow-cap)" stroke-width="2" opacity=".45" stroke-linecap="round"/>
+    </g>
+
+    <!-- 5 札幌钟楼 -->
+    <g transform="translate(782,0)">
+      <rect x="-50" y="384" width="100" height="46" fill="var(--lm2)"/>
+      <path d="M-56,384 L0,354 L56,384 Z" fill="var(--lm3)"/>
+      <path d="M-50,382 L0,355 L50,382" stroke="var(--snow-cap)" stroke-width="3" fill="none" opacity=".85" stroke-linecap="round"/>
+      <rect x="-14" y="320" width="28" height="64" fill="var(--lm2)"/>
+      <path d="M-21,320 L0,298 L21,320 Z" fill="var(--lm3)"/>
+      <circle cx="0" cy="342" r="9" fill="var(--lm2)" stroke="var(--line-ink)" stroke-width="1.8"/>
+      <path d="M0,342 v-4.5 M0,342 h3" stroke="var(--line-ink)" stroke-width="1.3" stroke-linecap="round"/>
+      <rect x="-38" y="402" width="11" height="13" fill="var(--win)"/>
+      <rect x="-6" y="402" width="11" height="13" fill="var(--win)"/>
+      <rect x="27" y="402" width="11" height="13" fill="var(--win)"/>
+    </g>
+
+    <!-- 6 小樽运河 -->
+    <g transform="translate(948,0)">
+      <rect x="-80" y="392" width="54" height="38" fill="var(--lm2)"/>
+      <path d="M-84,392 L-53,370 L-22,392 Z" fill="var(--lm3)"/>
+      <path d="M-80,391 L-53,371 L-26,391" stroke="var(--snow-cap)" stroke-width="3" fill="none" opacity=".85" stroke-linecap="round"/>
+      <rect x="-16" y="400" width="62" height="30" fill="var(--lm2)"/>
+      <path d="M-20,400 L15,380 L50,400 Z" fill="var(--lm3)"/>
+      <path d="M-16,399 L15,381 L46,399" stroke="var(--snow-cap)" stroke-width="3" fill="none" opacity=".85" stroke-linecap="round"/>
+      <rect x="-70" y="404" width="10" height="12" fill="var(--win)"/>
+      <rect x="-50" y="404" width="10" height="12" fill="var(--win)"/>
+      <rect x="-6" y="410" width="10" height="12" fill="var(--win)"/>
+      <rect x="14" y="410" width="10" height="12" fill="var(--win)"/>
+      <g transform="translate(66,430)">
+        <path d="M0,0 v-38" stroke="var(--lm3)" stroke-width="2.6"/>
+        <rect x="-5" y="-50" width="10" height="12" rx="1.5" fill="var(--lm3)"/>
+        <circle cx="0" cy="-44" r="10" fill="var(--win)" opacity=".18"/>
+        <circle cx="0" cy="-44" r="4" fill="var(--win)" opacity=".9"/>
+      </g>
+      <rect x="-90" y="446" width="180" height="30" rx="8" fill="var(--water2)" stroke="var(--snow-cap)" stroke-width="1.4" stroke-opacity=".45"/>
+      <path d="M-64,458 h30 M-10,466 h40 M46,456 h24" stroke="var(--snow-cap)" stroke-width="2.2" opacity=".4" stroke-linecap="round"/>
+    </g>
+
+    <!-- 7 新千岁机场 -->
+    <g transform="translate(1098,0)">
+      <rect x="-52" y="402" width="104" height="28" fill="var(--lm2)" stroke="var(--land-line)" stroke-width="1" stroke-opacity=".5"/>
+      <path d="M-58,402 L-4,384 L50,402 Z" fill="var(--lm3)"/>
+      <path d="M-52,401 L-4,385 L44,401" stroke="var(--snow-cap)" stroke-width="3" fill="none" opacity=".8" stroke-linecap="round"/>
+      <rect x="-40" y="408" width="10" height="12" fill="var(--win)" opacity=".8"/>
+      <rect x="-22" y="408" width="10" height="12" fill="var(--win)" opacity=".8"/>
+      <rect x="20" y="408" width="10" height="12" fill="var(--win)" opacity=".8"/>
+      <rect x="-8" y="330" width="16" height="72" fill="var(--lm3)"/>
+      <rect x="-16" y="310" width="32" height="20" rx="3" fill="var(--lm2)" stroke="var(--lm3)" stroke-width="2"/>
+      <rect x="-11" y="315" width="22" height="10" fill="var(--win)" opacity=".95"/>
+      <path d="M-16,310 L0,301 L16,310 Z" fill="var(--lm3)"/>
+    </g>
+    <g transform="translate(1146,172) rotate(-9) scale(.85)" fill="var(--lm3)">
+      <path d="M-22,0 h40 l10,3 -10,3 h-40 l-8,-3 Z"/>
+      <path d="M-2,-1 l-14,-13 h8 l18,13 Z"/>
+      <path d="M-2,1 l-14,13 h8 l18,-13 Z"/>
+    </g>
+
+    <!-- 前景雪堆 -->
+    <path d="M0,470 C170,456 330,482 520,472 C710,462 870,486 1050,476 C1112,472 1164,476 1200,472 L1200,500 L0,500 Z" fill="var(--snow3)"/>
+
+    <!-- 灌木 -->
+    <g fill="var(--tree2)" opacity=".35">
+      <ellipse cx="214" cy="480" rx="26" ry="8"/><ellipse cx="540" cy="489" rx="20" ry="6"/><ellipse cx="770" cy="493" rx="24" ry="7"/>
+    </g>
+
+    <!-- 前景树 -->
+    <g fill="var(--tree)">
+      <g transform="translate(44,500) scale(1.15)"><path d="M0,-70 L-22,-24 L-11,-24 L-28,6 L28,6 L11,-24 L22,-24 Z"/><rect x="-3.5" y="6" width="7" height="12" fill="var(--trunk)"/></g>
+      <g transform="translate(92,500) scale(.82)"><path d="M0,-70 L-22,-24 L-11,-24 L-28,6 L28,6 L11,-24 L22,-24 Z"/><rect x="-3.5" y="6" width="7" height="12" fill="var(--trunk)"/></g>
+      <g transform="translate(1162,498) scale(1.05)"><path d="M0,-70 L-22,-24 L-11,-24 L-28,6 L28,6 L11,-24 L22,-24 Z"/><rect x="-3.5" y="6" width="7" height="12" fill="var(--trunk)"/></g>
+      <g transform="translate(1196,500) scale(.7)"><path d="M0,-70 L-22,-24 L-11,-24 L-28,6 L28,6 L11,-24 L22,-24 Z"/></g>
+    </g>
+
+    <!-- 雪 -->
+    <g fill="#fff" opacity=".9">
+      <circle class="flake" cx="120" cy="40" r="2.2" style="animation-delay:0s"/>
+      <circle class="flake" cx="300" cy="70" r="1.8" style="animation-delay:1.4s"/>
+      <circle class="flake" cx="460" cy="30" r="2" style="animation-delay:2.6s"/>
+      <circle class="flake" cx="620" cy="60" r="1.6" style="animation-delay:.8s"/>
+      <circle class="flake" cx="760" cy="36" r="2.1" style="animation-delay:3.4s"/>
+      <circle class="flake" cx="880" cy="80" r="1.7" style="animation-delay:2s"/>
+      <circle class="flake" cx="980" cy="44" r="1.9" style="animation-delay:4.2s"/>
+      <circle class="flake" cx="200" cy="120" r="1.6" style="animation-delay:5s"/>
+      <circle class="flake" cx="520" cy="110" r="1.8" style="animation-delay:3.8s"/>
+      <circle class="flake" cx="1080" cy="100" r="2" style="animation-delay:1.1s"/>
+    </g>
+  </svg>
+
+  <div class="masthead">
+    <div class="kick">Travel Handbook · 2026 Winter</div>
+    <h1>东京<span class="ar">→</span>北海道</h1>
+    <div class="sub">2026.12.14 — 12.20　<span>·</span>　兄妹二人　<span>·</span>　7 天 6 晚　<span>·</span>　东京 · 函馆 · 登别 · 洞爷湖 · 札幌 · 小樽</div>
+    <div class="ruler"></div>
+  </div>
+</section>
+
+<!-- ========== 2. 倒计时 + 时钟 ========== -->
+<section class="sec wrap" id="clock">
+  <div class="sec-h"><span class="no">01</span><h2>倒计时与时钟</h2><span class="hint">时区 A 北京时间 · 时区 B 日本时间</span></div>
+  <p class="sec-sub">日本全境统一使用 JST（UTC+9），东京与北海道之间没有时差。</p>
+
+  <div class="clock-grid">
+    <div class="card">
+      <h3>距离出发</h3>
+      <div class="cd" aria-live="polite">
+        <div class="u"><b id="cdD">--</b><i>天</i></div>
+        <div class="u"><b id="cdH">--</b><i>时</i></div>
+        <div class="u"><b id="cdM">--</b><i>分</i></div>
+        <div class="u"><b id="cdS">--</b><i>秒</i></div>
+      </div>
+      <p class="cd-note" id="cdNote">出发日 2026 年 12 月 14 日 00:00（日本时间）· 具体航班时刻待补充</p>
+    </div>
+
+    <div class="card">
+      <h3>此刻当地</h3>
+      <div class="tzs">
+        <div class="tz-row">
+          <div class="nm">时区 A<small>北京 / 出发地</small></div>
+          <span class="off">UTC+8</span>
+          <time id="clkA">--:--:--</time>
+        </div>
+        <div class="tz-row">
+          <div class="nm">时区 B<small>东京 · 函馆 · 札幌</small></div>
+          <span class="off">UTC+9</span>
+          <time id="clkB">--:--:--</time>
+        </div>
+      </div>
+      <p class="tz-tip">日本时间 = 北京时间 + 1 小时。机票与车票上的起降时刻均为当地时间。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. 地图 ========== -->
+<section class="sec wrap" id="map">
+  <div class="sec-h"><span class="no">02</span><h2>行程总览地图</h2><span class="hint">点击某一天查看当天路线</span></div>
+  <p class="sec-sub">示意图，只表达顺序与相对位置，不代表真实地理比例。点击标记可看景点介绍。</p>
+
+  <div class="map-ctrl" id="mapCtrl" role="group" aria-label="按天筛选地图">
+    <button class="chip all" data-day="all" aria-pressed="true">全部地点</button>
+  </div>
+
+  <div class="map-stage" id="mapStage">
+    <div class="map-inner" id="mapInner">
+      <svg class="map-svg" id="mapSvg" viewBox="0 0 1000 740" preserveAspectRatio="xMidYMid meet" role="img" aria-label="东京到北海道七天路线示意图">
+        <defs>
+          <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+            <circle cx="1.3" cy="1.3" r="1.3" fill="var(--land-line)" opacity=".5"/>
+          </pattern>
+        </defs>
+        <rect width="1000" height="740" fill="var(--sea)"/>
+        <rect width="1000" height="740" fill="url(#dots)" opacity=".55"/>
+
+        <!-- 北海道 -->
+        <path class="land" d="M182,262 C162,178 206,104 292,76 C378,48 486,62 550,122 C606,174 620,248 590,312 C566,364 526,402 476,406 C434,410 410,384 396,348 C382,310 344,290 304,280 C248,266 198,342 182,262 Z"/>
+        <!-- 本州 -->
+        <path class="land" d="M636,472 C692,452 752,460 796,494 C842,530 878,592 900,660 C910,690 914,720 916,762 L700,762 C676,700 654,630 642,570 C634,534 632,496 636,472 Z"/>
+        <!-- 小岛 -->
+        <ellipse class="land" cx="566" cy="452" rx="16" ry="9"/>
+
+        <!-- 山形符号 -->
+        <g fill="none" stroke="var(--land-line)" stroke-width="1.5" opacity=".85" stroke-linejoin="round">
+          <path d="M230,178 l12,-11 12,11"/><path d="M282,156 l14,-13 14,13"/><path d="M432,204 l11,-10 11,10"/>
+        </g>
+
+        <text class="sea-label" x="120" y="430">日 本 海</text>
+        <text class="sea-label" x="792" y="556">太 平 洋</text>
+        <text class="sea-label" x="520" y="492" style="font-size:9px;letter-spacing:.3em">津 轻 海 峡</text>
+
+        <!-- 指北针 -->
+        <g transform="translate(58,88)" opacity=".55">
+          <circle r="19" fill="none" stroke="var(--land-line)" stroke-width="1.1"/>
+          <path d="M0,-13 L4.5,4 L0,0.5 L-4.5,4 Z" fill="var(--muted)"/>
+          <text x="0" y="-25" text-anchor="middle" font-size="10" fill="var(--muted)" letter-spacing=".1em">N</text>
+        </g>
+
+        <g id="routeLayer"></g>
+        <g id="nodeLayer"></g>
+      </svg>
+    </div>
+    <div class="map-labels" id="mapLabels"></div>
+  </div>
+
+  <div class="map-legend">
+    <span><i style="background:#b5462f"></i>每日路线（颜色不同）</span>
+    <span><i style="background:var(--bg2);border:2px solid var(--blue)"></i>车站 / 机场</span>
+    <span><i style="background:var(--bg2);border:2px solid var(--accent)"></i>景点</span>
+  </div>
+  <p class="map-hint">提示：选一天 → 地图放大到当天路线；点「全部地点」回到总览。地图与全部内容均已内嵌，断网可用。</p>
+</section>
+
+<!-- ========== 4. 逐日行程 ========== -->
+<section class="sec wrap" id="plan">
+  <div class="sec-h"><span class="no">03</span><h2>逐日行程</h2><span class="hint" id="planHint">7 天 · 点击标题折叠</span></div>
+  <p class="sec-sub">时刻均为当地（JST）参考值，最终以票据为准。点「介绍」看景点卡片，点「导航」跳转地图。</p>
+
+  <div class="days" id="days"></div>
+</section>
+
+<!-- ========== 5a. 交通票据 ========== -->
+<section class="sec wrap" id="tickets">
+  <div class="sec-h"><span class="no">04</span><h2>交通票据</h2><span class="hint">班次与座位号待补充</span></div>
+  <p class="sec-sub">订好后把班次、时刻、座位号填进来，这一栏就是执行清单。</p>
+  <div class="tick" id="tickList"></div>
+</section>
+
+<!-- ========== 5b. 住宿 ========== -->
+<section class="sec wrap" id="stay">
+  <div class="sec-h"><span class="no">05</span><h2>住宿</h2><span class="hint">订单号待补充</span></div>
+  <p class="sec-sub">只列城市、区域与房型要求，酒店名与订单号统一标「待补充」，预订后回填。</p>
+  <p class="swipe">← 左右滑动查看完整表格 →</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>日期</th><th>城市</th><th>酒店 / 区域</th><th>订单号</th><th>备注</th></tr></thead>
+      <tbody id="stayBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 5c. 待办 ========== -->
+<section class="sec wrap" id="todo">
+  <div class="sec-h"><span class="no">06</span><h2>待办清单</h2><span class="hint" id="todoHint">0 / 0</span></div>
+  <p class="sec-sub">勾选状态保存在本机浏览器，换设备不同步。</p>
+  <div class="card">
+    <div class="todo-grid" id="todoList"></div>
+  </div>
+</section>
+
+<!-- ========== 5d. 贴士 ========== -->
+<section class="sec wrap" id="tips">
+  <div class="sec-h"><span class="no">07</span><h2>旅行贴士</h2><span class="hint">冬季出行的几个硬规则</span></div>
+  <div class="tips" id="tipList"></div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fin">
+      <span><b>东京 → 北海道</b> · 2026.12.14—12.20</span>
+      <span>版本 v2.0</span>
+      <span>更新 2026-11-12</span>
+      <span>共 7 天 · 2 人</span>
+    </div>
+    <p class="note">本页为规划稿：航班号、车次时刻、酒店房态与订单号均未确认，标注「待补充 / 待确认」的内容请在预订后回填。耗时与气温为参考值，出行前请以 JR、航空公司、旅馆及景点官方渠道为准。时区 A 按北京时间（UTC+8）计算，如出发地不同请自行换算。</p>
+  </div>
+</footer>
+
+<div class="mask" id="mask"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetName">
+  <button class="sheet-x" id="sheetX" aria-label="关闭">✕</button>
+  <a class="place" id="sheetName" href="#" target="_blank" rel="noopener"><span id="sheetNameTxt">地点</span><span class="go">导航 ↗</span></a>
+  <p class="one" id="sheetOne"></p>
+  <h4>必看点</h4>
+  <ul class="must" id="sheetMust"></ul>
+  <h4>体验建议</h4>
+  <div class="tipbox" id="sheetTip"></div>
+</div>
+
+<script>
+/* ============================================================
+   工具
+   ============================================================ */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+
+/* ============================================================
+   数据：地点
+   x, y 为 1000×740 示意的坐标；dir 为标签方位；big 为总览时显示标签
+   ============================================================ */
+const PLACES = {
+  hnd:{n:'羽田机场',x:806,y:626,k:'airport',big:1,dir:'right',one:'东京的门户，落地后 30–45 分钟就能进市区。',
+    must:['国际线航站楼 4 楼的江户小路','屋顶展望台看飞机起降'],
+    tip:'入境走电子通道更快。行李多的话，直接在机场把大件寄到札幌酒店，后面几天会轻松很多。'},
+  tky:{n:'东京站',x:756,y:552,k:'station',big:1,dir:'up',one:'红砖站房是东京的门面，也是新干线的起点。',
+    must:['丸之内侧的红砖站舍','KITTE 屋顶花园俯看站台'],
+    tip:'新干线在八重洲侧，按指示牌走；提前 20 分钟进站足够。'},
+  maru:{n:'丸之内',x:766,y:544,k:'poi',dir:'right',one:'皇居外的商务街，冬天整条街都是灯。',
+    must:['仲通灯饰','行幸通与银杏并木'],
+    tip:'16:30 天黑后灯最漂亮，17:00 前后人相对少。'},
+  shk:{n:'新函馆北斗',x:532,y:300,k:'station',big:1,dir:'right',one:'北海道新干线的终点，但不在函馆市区。',
+    must:['站台尽头的青函隧道方向','站内车站便当'],
+    tip:'换乘函馆 Liner 只要 15–20 分钟，别在站里磨太久。'},
+  hkd:{n:'函馆站',x:470,y:336,k:'station',big:1,dir:'left',one:'函馆的门户，朝市就在旁边。',
+    must:['站前广场','一路之隔的函馆朝市'],
+    tip:'站前坡道冬天结冰，拖行李箱要慢一点。'},
+  asai:{n:'函馆朝市',x:478,y:330,k:'poi',dir:'right',one:'早上 7 点最鲜活的海鲜市场。',
+    must:['现钓鱿鱼','五色海鲜丼'],
+    tip:'9 点后游客变多，想吃现钓就早点到。'},
+  motomachi:{n:'元町·八幡坂',x:456,y:352,k:'poi',dir:'left',one:'坡道尽头就是海，函馆最像电影的一幕。',
+    must:['八幡坂的直线坡道','旧英国领事馆一带的洋馆'],
+    tip:'雪后坡道很滑，尽量走人行道内侧。'},
+  kanemori:{n:'金森红砖仓库',x:464,y:344,k:'poi',dir:'right',one:'旧仓库改的商业街，灯亮起来最好看。',
+    must:['红砖仓库群','海边步道'],
+    tip:'店铺多在 17:00 后陆续关门，先逛再吃饭。'},
+  mount:{n:'函馆山',x:446,y:362,k:'poi',dir:'down',one:'世界级夜景，但要抢在索道排队前上山。',
+    must:['索道山顶展望台','日落前 30 分钟的蓝调时刻'],
+    tip:'风大停运是常事，出发前查官网；索道停运时可改坐登山巴士。'},
+  goryo:{n:'五棱郭塔',x:488,y:318,k:'poi',dir:'up',one:'从塔上看星形城郭，冬天雪线最清楚。',
+    must:['107 米展望台','箱馆奉行所'],
+    tip:'上午逆光少，拍星形轮廓最清楚。'},
+  nob:{n:'登别站',x:404,y:238,k:'station',big:1,dir:'right',one:'去温泉街的换乘点，巴士班次不多。',
+    must:['站前巴士站','雪中的小站台'],
+    tip:'先看末班车时间，错过只能打车。'},
+  jigoku:{n:'地狱谷',x:394,y:222,k:'poi',dir:'left',one:'硫磺蒸汽从雪地里冒出来，像另一个星球。',
+    must:['铁泉池','大汤沼'],
+    tip:'栈道结冰，鞋底纹路要深；17:00 前离开。'},
+  oyu:{n:'大汤沼',x:386,y:212,k:'poi',dir:'up',one:'地狱谷深处的温泉沼，雾气最浓。',
+    must:['大汤沼展望台','天然足汤'],
+    tip:'往返约 40–60 分钟，雪天量力而行。'},
+  toya:{n:'洞爷站',x:330,y:262,k:'station',dir:'left',one:'去洞爷湖温泉的中转站。',
+    must:['站前巴士站','雪原'],
+    tip:'巴士约 20 分钟一班，先看时刻再出站。'},
+  toyako:{n:'洞爷湖温泉',x:318,y:246,k:'poi',big:1,dir:'left',one:'湖面、火山、温泉，北海道冬天的标准画面。',
+    must:['湖畔步道','Silo 展望台'],
+    tip:'12 月没有花火（花火是 4–10 月），别按夏季攻略安排。'},
+  usuzan:{n:'有珠山缆车',x:326,y:236,k:'poi',dir:'up',one:'6 分钟上山顶，看洞爷湖和昭和新山。',
+    must:['山顶展望台','火山口步道'],
+    tip:'风大就停运，当天早上先查运行状态。'},
+  spk:{n:'札幌站',x:314,y:120,k:'station',big:1,dir:'up',one:'北海道的大门，也是购物和换乘中心。',
+    must:['站前广场','大丸百货地下食品层'],
+    tip:'去小樽、新千岁的车都在 5–6 号站台。'},
+  odori:{n:'大通公园',x:306,y:132,k:'poi',dir:'right',one:'札幌的十字绿轴，冬天变成灯饰会场。',
+    must:['札幌电视塔','慕尼黑圣诞市集'],
+    tip:'灯饰一般 11 月下旬开始，2026 年日程待确认。'},
+  susukino:{n:'薄野',x:312,y:142,k:'poi',dir:'down',one:'北海道最热闹的夜，成吉思汗和汤咖喱都在这。',
+    must:['拉面横丁','狸小路商店街'],
+    tip:'周六热门店必须预约，12 月是忘年会季。'},
+  otaru:{n:'小樽运河',x:232,y:96,k:'poi',big:1,dir:'left',one:'煤气灯、仓库与雪，小樽的招牌画面。',
+    must:['浅草桥机位','运河游船'],
+    tip:'16:10 天就黑，点灯比东京早一小时。'},
+  sakaemachi:{n:'堺町通',x:250,y:104,k:'poi',dir:'right',one:'甜点、玻璃、音乐盒一条街。',
+    must:['北一硝子','音乐盒堂','LeTAO 本店'],
+    tip:'多数店 17:00–18:00 关门，购物别拖到傍晚。'},
+  tengu:{n:'天狗山',x:222,y:84,k:'poi',dir:'left',one:'小樽最高的展望台，夜景比运河更开阔。',
+    must:['缆车山顶','滑雪场夜景'],
+    tip:'缆车末班较早，先确认下山时间。'},
+  nijo:{n:'二条市场',x:320,y:126,k:'poi',dir:'right',one:'札幌市区的海鲜早餐地。',
+    must:['海鲜丼','螃蟹'],
+    tip:'8 点前人少，价格也比中午实在。'},
+  akarenga:{n:'红砖厅舍',x:302,y:112,k:'poi',dir:'up',one:'北海道厅旧本厅舍，冬天配雪最上镜。',
+    must:['红砖立面','前庭雪景'],
+    tip:'免费入馆，9:00 开门。'},
+  cts:{n:'新千岁机场',x:372,y:166,k:'airport',big:1,dir:'down',one:'不用出机场就能吃遍北海道。',
+    must:['拉面道场','国内线甜点区','哆啦A梦空中乐园'],
+    tip:'雪天提前 3 小时到；国际线在相邻的另一栋楼。'}
+};
+
+/* ============================================================
+   数据：七天行程
+   ============================================================ */
+const DAYS = [
+{n:1,date:'12/14',wd:'周一',city:'东京',title:'抵达与城市夜景',color:'#b5462f',
+ stay:{name:'待补充',area:'东京站·丸之内 / 银座 / 浅草',note:'建议选可免费取消'},
+ items:[
+  {t:'待补充',pid:'hnd',title:'国际航班抵达 羽田 HND / 成田 NRT',note:'航班待补充；入境与取行李约 45–60 分钟',tags:['航班','注意']},
+  {t:'约 11:00',pid:'tky',title:'机场 → 市区酒店，寄存行李',note:'羽田约 30–45 分钟，成田约 60–90 分钟',tags:[],leg:{min:45,mode:'铁道'}},
+  {t:'14:30',pid:'maru',title:'丸之内 · 东京站周边散步',note:'皇居外苑、KITTE 屋顶花园，先熟悉路线',tags:['注意'],leg:{min:20,mode:'步行'}},
+  {t:'17:00',pid:'maru',title:'冬季点灯：丸之内仲通 / 日比谷',note:'16:30 天黑，17:00 后灯最亮；具体日程待确认',tags:['注意'],leg:{min:15,mode:'步行'}},
+  {t:'19:00',pid:'tky',title:'晚餐：东京站拉面街 / 银座',note:'周末排队更久，可提前取号',tags:[],leg:{min:10,mode:'步行'}}
+ ]},
+
+{n:2,date:'12/15',wd:'周二',city:'东京 → 函馆',title:'新干线纵贯本州',color:'#3d6f8e',
+ stay:{name:'待补充',area:'函馆站前 / 元町·湾区',note:'站前利于次日特急'},
+ items:[
+  {t:'08:20',pid:'tky',title:'东京站 乘北海道新干线「隼号」→ 新函馆北斗',note:'约 4 小时；12 月午后班次较满，建议指定席',tags:['需提前订','注意']},
+  {t:'12:30',pid:'shk',title:'新函馆北斗 → 函馆（函馆 Liner）',note:'约 15–20 分钟；新函馆北斗不在市区，换乘别走错',tags:['注意'],leg:{min:245,mode:'新干线'}},
+  {t:'13:30',pid:'hkd',title:'酒店寄存行李 · 站前午餐',note:'',tags:[],leg:{min:20,mode:'Liner'}},
+  {t:'15:30',pid:'motomachi',title:'元町 · 八幡坂散步',note:'坡道尽头是海，雪后注意脚下',tags:[],leg:{min:15,mode:'市电'}},
+  {t:'16:30',pid:'kanemori',title:'金森红砖仓库',note:'17:00 后店铺陆续关门，先逛再吃饭',tags:['注意'],leg:{min:8,mode:'步行'}},
+  {t:'17:30',pid:'mount',title:'函馆山缆车 · 夜景',note:'日落后 30–60 分钟为最佳窗口；风大停运',tags:['注意'],leg:{min:12,mode:'步行'}}
+ ]},
+
+{n:3,date:'12/16',wd:'周三',city:'函馆 → 登别',title:'朝市、星形城郭与温泉',color:'#6d7f45',
+ stay:{name:'待补充',area:'登别温泉街',note:'含晚餐 · 17:00 前到店'},
+ items:[
+  {t:'07:30',pid:'asai',title:'函馆朝市早餐',note:'7–9 点最鲜活，海鲜丼与现钓鱿鱼',tags:[]},
+  {t:'09:00',pid:'goryo',title:'五棱郭塔',note:'107 米展望台看星形城郭，上午光线最好',tags:[],leg:{min:8,mode:'步行'}},
+  {t:'11:30',pid:'hkd',title:'函馆站 → 登别（特急「北斗」）',note:'约 2 小时；指定席建议提前订',tags:['需提前订'],leg:{min:15,mode:'市电'}},
+  {t:'14:00',pid:'nob',title:'登别站 → 温泉街（路线巴士）',note:'约 10–15 分钟；班次不密，先看末班',tags:['注意'],leg:{min:120,mode:'特急'}},
+  {t:'15:00',pid:'jigoku',title:'入住温泉旅馆 · 地狱谷散步',note:'务必 17:00 前到店，晚餐 18:00–18:30 开席',tags:['注意'],leg:{min:15,mode:'巴士'}},
+  {t:'18:00',title:'旅馆会席 + 大浴场',note:'硫磺泉、多种泉质；确认男女分时段时间',tags:[]}
+ ]},
+
+{n:4,date:'12/17',wd:'周四',city:'登别 → 洞爷湖',title:'地狱谷晨景与火山湖',color:'#a06a2c',
+ stay:{name:'待补充',area:'洞爷湖温泉（湖畔）',note:'含晚餐 · 选湖侧房'},
+ items:[
+  {t:'08:00',pid:'jigoku',title:'地狱谷晨间散步',note:'蒸汽 + 雪最有画面；栈道结冰',tags:['注意']},
+  {t:'10:00',pid:'oyu',title:'大汤沼 / 奥之汤步道（可选）',note:'往返 40–60 分钟，需防滑鞋',tags:[],leg:{min:30,mode:'步行'}},
+  {t:'12:30',pid:'nob',title:'登别站 → 洞爷站',note:'JR + 巴士合计约 1 小时 10 分–1 小时 30 分',tags:['需提前订'],leg:{min:40,mode:'步行'}},
+  {t:'14:00',pid:'toyako',title:'入住洞爷湖温泉',note:'确认旅馆到洞爷站的接送巴士',tags:['注意'],leg:{min:75,mode:'JR+巴士'}},
+  {t:'15:00',pid:'usuzan',title:'有珠山缆车',note:'看洞爷湖与昭和新山；风大停运',tags:['注意'],leg:{min:20,mode:'巴士'}},
+  {t:'18:30',title:'湖畔晚餐 · 温泉',note:'12 月湖上无花火',tags:[],leg:{min:15,mode:'巴士'}}
+ ]},
+
+{n:5,date:'12/18',wd:'周五',city:'洞爷湖 → 札幌',title:'回到城市与灯饰',color:'#7b5d8a',
+ stay:{name:'待补充',area:'大通 / 札幌站 / 薄野',note:'12/18–19 连泊同一家'},
+ items:[
+  {t:'08:30',pid:'toyako',title:'湖畔晨景 · Silo 展望台',note:'10:00 前退房',tags:[]},
+  {t:'10:30',pid:'toya',title:'洞爷站 → 札幌（特急）',note:'约 1 小时 40 分–2 小时；白天班次约 1 小时 1–2 班',tags:['需提前订'],leg:{min:25,mode:'巴士'}},
+  {t:'13:30',pid:'spk',title:'札幌站 · 酒店寄存',note:'',tags:[],leg:{min:110,mode:'特急'}},
+  {t:'16:00',pid:'odori',title:'大通公园 白灯饰 / 圣诞市集',note:'16:00 天黑，灯刚亮人还不多',tags:['注意'],leg:{min:10,mode:'地下铁'}},
+  {t:'18:00',pid:'susukino',title:'薄野晚餐：成吉思汗 / 汤咖喱',note:'周五夜间满座率高，建议预约',tags:['需提前订'],leg:{min:8,mode:'步行'}}
+ ]},
+
+{n:6,date:'12/19',wd:'周六',city:'札幌 ⇄ 小樽',title:'运河、仓库与雪山夜景',color:'#3d7a6a',
+ stay:{name:'待补充',area:'同上（连泊）',note:'无需换酒店'},
+ items:[
+  {t:'08:30',pid:'spk',title:'札幌站 → 小樽站（JR 快速）',note:'约 32–40 分钟；去程坐右侧靠海',tags:[],leg:{min:10,mode:'步行'}},
+  {t:'09:30',pid:'otaru',title:'小樽运河',note:'浅草桥机位最经典',tags:[],leg:{min:38,mode:'JR'}},
+  {t:'11:00',pid:'sakaemachi',title:'堺町通 · 北一硝子 · 音乐盒堂',note:'多数店 17:00–18:00 关门',tags:['注意'],leg:{min:8,mode:'步行'}},
+  {t:'14:30',pid:'tengu',title:'天狗山缆车（可选）',note:'夜景开阔；缆车末班较早',tags:['注意'],leg:{min:15,mode:'巴士'}},
+  {t:'17:00',pid:'otaru',title:'运河点灯 → 返回札幌',note:'16:10 天黑，点灯后 17:00 体感骤降',tags:[],leg:{min:30,mode:'巴士'}},
+  {t:'19:00',pid:'susukino',title:'札幌晚餐（预约）+ 狸小路',note:'12 月忘年会季，周六务必订位',tags:['需提前订'],leg:{min:40,mode:'JR'}}
+ ]},
+
+{n:7,date:'12/20',wd:'周日',city:'札幌 → 新千岁',title:'市场早餐与返程',color:'#8c4a5e',
+ stay:{name:'—',area:'返程日，无需住宿',note:'10:00 前退房'},
+ items:[
+  {t:'08:00',pid:'nijo',title:'二条市场早餐',note:'8 点前人少，海鲜丼与螃蟹',tags:[]},
+  {t:'09:30',pid:'akarenga',title:'红砖厅舍 / 大通公园',note:'免费入馆，9:00 开门',tags:[],leg:{min:10,mode:'步行'}},
+  {t:'11:00',pid:'spk',title:'退房 → 札幌站',note:'行李多建议早一班车',tags:['注意'],leg:{min:12,mode:'步行'}},
+  {t:'11:40',pid:'cts',title:'快速 Airport → 新千岁机场',note:'约 37–40 分钟，约每 12 分钟一班',tags:[],leg:{min:40,mode:'JR'}},
+  {t:'13:00',pid:'cts',title:'值机 · 机场采购',note:'雪天提前 3 小时到；国际线在另一栋楼',tags:['注意']},
+  {t:'待补充',title:'返程航班（CTS 直飞 或 回羽田转国际线）',note:'二选一待确认；同日转机需留 3 小时以上',tags:['航班','注意'],leg:{min:0,mode:''}}
+ ]}
+];
+
+/* 票据 */
+const TICKETS = [
+  {d:'12/14',t:'国际段 · 去程',x:'出发地 → 东京（HND / NRT）',c:'#b5462f',s:'待补充'},
+  {d:'12/15',t:'北海道新干线「隼号」',x:'东京 → 新函馆北斗（约 4 小时）',c:'#3d6f8e',s:'待补充'},
+  {d:'12/16',t:'特急「北斗」',x:'函馆 → 登别（约 2 小时）',c:'#6d7f45',s:'待补充'},
+  {d:'12/17',t:'JR + 巴士',x:'登别 → 洞爷（约 1 小时 10 分–1 小时 30 分）',c:'#a06a2c',s:'待补充'},
+  {d:'12/18',t:'特急',x:'洞爷 → 札幌（约 1 小时 40 分–2 小时）',c:'#7b5d8a',s:'待补充'},
+  {d:'12/20',t:'国际段 · 回程',x:'新千岁 CTS 直飞 ／ 回羽田转机',c:'#8c4a5e',s:'待补充'}
+];
+
+/* 住宿 */
+const STAYS = [
+  ['12/14','东京','待补充','待补充','丸之内 / 银座 / 浅草；1 晚，双床'],
+  ['12/15','函馆','待补充','待补充','站前或元町；1 晚，双床'],
+  ['12/16','登别温泉','待补充','待补充','含晚餐，17:00 前到店；确认接送车'],
+  ['12/17','洞爷湖温泉','待补充','待补充','含晚餐，湖侧房；确认接送车'],
+  ['12/18','札幌','待补充','待补充','与 12/19 连泊同一家，可寄存行李'],
+  ['12/19','札幌','待补充','待补充','同上'],
+  ['12/20','—','返程日','—','10:00 前退房，行李寄存后去机场']
+];
+
+/* 待办 */
+const TODOS = [
+  ['国际段机票：去程 / 回程','待补充'],
+  ['返程机场确认：CTS 直飞 或 回羽田','待确认'],
+  ['日本签证与出签日','待补充'],
+  ['入境手续（Visit Japan Web 等）','待确认'],
+  ['东京 12/14 酒店','待补充'],
+  ['函馆 12/15 酒店','待补充'],
+  ['登别温泉 12/16（含晚餐）','待补充'],
+  ['洞爷湖温泉 12/17（含晚餐）','待补充'],
+  ['札幌 12/18–19 连泊','待补充'],
+  ['新干线 / 特急 指定席','待确认'],
+  ['12/19 札幌晚餐预约','待确认'],
+  ['函馆山 / 有珠山 / 天狗山缆车','待确认'],
+  ['行李宅急便（东京 → 札幌）','待确认'],
+  ['旅行保险（含雪天延误）','待补充']
+];
+
+/* 贴士 */
+const TIPS = [
+  ['日落比想象中早','札幌 16:02、函馆 16:10 就天黑。户外景点压在 08:30–15:30，跨城车程放到 15:00 之后。'],
+  ['鞋比外套重要','札幌、小樽人行道是压实冰面，普通运动鞋摔倒是这趟行程最现实的受伤原因。'],
+  ['温泉旅馆别迟到','晚餐 18:00–18:30 开席，17:00 未到店常被视同不含晚餐，且不退费。'],
+  ['新函馆北斗不在函馆','车站位于北斗市，需再换函馆 Liner 15–20 分钟，别以为到站就是市区。'],
+  ['大雪天多留 3 小时','新千岁冬季除雪延误常见，返程日不要安排“上午玩、下午飞”。'],
+  ['大件行李先寄走','12/15 从东京用宅急便寄到札幌，约 2,000–2,500 日元/件，之后几天只带小包。'],
+  ['12 月没有的花火','洞爷湖花火是 4–10 月；小樽“雪灯之路”是 2 月，别按宣传图规划。'],
+  ['现金与网络','多数店铺可刷卡，但温泉街小店、巴士仍需现金；建议提前买好 eSIM 或漫游包。']
+];
+
+/* ============================================================
+   主题
+   ============================================================ */
+const themeBtn = $('#themeBtn'), themeIcon = $('#themeIcon'), themeTxt = $('#themeTxt'), themeMeta = $('#themeColor');
+function applyTheme(t){
+  document.documentElement.dataset.theme = t;
+  themeIcon.textContent = t === 'dark' ? '☀' : '☾';
+  themeTxt.textContent = t === 'dark' ? '日间' : '夜间';
+  themeMeta.setAttribute('content', t === 'dark' ? '#11151b' : '#f6f1e6');
+  store.set('tk2-theme', t);
+}
+const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(store.get('tk2-theme', null) || (sysDark ? 'dark' : 'light'));
+themeBtn.addEventListener('click', () => {
+  applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+});
+
+/* ============================================================
+   倒计时 + 时钟
+   ============================================================ */
+const TARGET = Date.UTC(2026, 11, 13, 15, 0, 0); // 2026-12-14 00:00 JST
+function pad(n){ return String(n).padStart(2, '0'); }
+function zoneTime(offH){
+  const d = new Date(Date.now() + offH * 3600e3);
+  return pad(d.getUTCHours()) + ':' + pad(d.getUTCMinutes()) + ':' + pad(d.getUTCSeconds());
+}
+function tickClock(){
+  const left = TARGET - Date.now();
+  const box = [$('#cdD'), $('#cdH'), $('#cdM'), $('#cdS')];
+  if (left <= 0){
+    box[0].textContent = '0'; box[1].textContent = '00'; box[2].textContent = '00'; box[3].textContent = '00';
+    $('#cdNote').textContent = '已到出发日 · 祝旅途顺利';
+  } else {
+    const s = Math.floor(left / 1000);
+    box[0].textContent = Math.floor(s / 86400);
+    box[1].textContent = pad(Math.floor(s % 86400 / 3600));
+    box[2].textContent = pad(Math.floor(s % 3600 / 60));
+    box[3].textContent = pad(s % 60);
+  }
+  $('#clkA').textContent = zoneTime(8);
+  $('#clkB').textContent = zoneTime(9);
+}
+tickClock();
+setInterval(tickClock, 1000);
+
+/* ============================================================
+   地图
+   ============================================================ */
+const mapCtrl = $('#mapCtrl'), mapSvg = $('#mapSvg'), mapInner = $('#mapInner'), mapLabels = $('#mapLabels'), mapStage = $('#mapStage');
+const routeLayer = $('#routeLayer'), nodeLayer = $('#nodeLayer');
+let zoomState = {z:1, tx:0, ty:0};
+
+DAYS.forEach(d => {
+  const b = document.createElement('button');
+  b.className = 'chip'; b.dataset.day = String(d.n); b.setAttribute('aria-pressed', 'false');
+  b.innerHTML = `D${d.n} <span style="opacity:.6">${d.date}</span>`;
+  mapCtrl.appendChild(b);
+});
+
+function smoothPath(pts){
+  if (pts.length < 2) return '';
+  let d = `M${pts[0][0]},${pts[0][1]}`;
+  for (let i = 1; i < pts.length - 1; i++){
+    const x = (pts[i][0] + pts[i + 1][0]) / 2, y = (pts[i][1] + pts[i + 1][1]) / 2;
+    d += ` Q${pts[i][0]},${pts[i][1]} ${x},${y}`;
+  }
+  const last = pts[pts.length - 1];
+  return d + ` L${last[0]},${last[1]}`;
+}
+
+function dayPlaces(day){
+  const seen = new Set(), out = [];
+  day.items.forEach(it => {
+    if (it.pid && !seen.has(it.pid)){ seen.add(it.pid); out.push(it.pid); }
+  });
+  return out;
+}
+
+function renderMap(mode){
+  routeLayer.innerHTML = ''; nodeLayer.innerHTML = ''; mapLabels.innerHTML = '';
+  const isAll = mode === 'all';
+  const day = isAll ? null : DAYS.find(d => d.n === Number(mode));
+
+  const shownDays = isAll ? DAYS : [day];
+  shownDays.forEach(d => {
+    const ids = dayPlaces(d);
+    if (ids.length < 2) return;
+    const pts = ids.map(id => [PLACES[id].x, PLACES[id].y]);
+    const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    p.setAttribute('d', smoothPath(pts));
+    p.setAttribute('class', 'route');
+    p.setAttribute('stroke', d.color);
+    if (isAll) p.setAttribute('opacity', '.5');
+    routeLayer.appendChild(p);
+  });
+
+  const ids = isAll ? Object.keys(PLACES) : dayPlaces(day);
+  ids.forEach(id => {
+    const pl = PLACES[id];
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.setAttribute('class', 'node' + (pl.big ? ' major' : ''));
+    g.setAttribute('transform', `translate(${pl.x},${pl.y})`);
+    g.dataset.pid = id;
+    g.innerHTML =
+      `<circle class="halo" r="${pl.big ? 15 : 11}"></circle>` +
+      `<circle r="${pl.big ? 5.6 : 4.2}" stroke="${pl.k === 'station' || pl.k === 'airport' ? 'var(--blue)' : 'var(--accent)'}"></circle>`;
+    g.addEventListener('click', () => openSheet(id));
+    nodeLayer.appendChild(g);
+
+    if (isAll && !pl.big) return;
+    const lab = document.createElement('button');
+    lab.className = 'mlab ' + (pl.dir || 'down');
+    lab.dataset.pid = id;
+    lab.dataset.fx = pl.x / 1000;
+    lab.dataset.fy = pl.y / 740;
+    lab.textContent = pl.n;
+    lab.addEventListener('click', e => { e.stopPropagation(); openSheet(id); });
+    mapLabels.appendChild(lab);
+  });
+
+  $$('.chip', mapCtrl).forEach(c => c.setAttribute('aria-pressed', String(c.dataset.day === mode)));
+  zoomTo(isAll ? null : ids);
+}
+
+function zoomTo(ids){
+  if (!ids || ids.length === 0){
+    setZoom(1, .5, .5); return;
+  }
+  const st = mapStage.getBoundingClientRect();
+  const W = st.width || 1, H = st.height || 1;
+  const s = Math.min(W / 1000, H / 740);
+  const ox = (W - 1000 * s) / 2, oy = (H - 740 * s) / 2;
+  let minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
+  ids.forEach(id => {
+    const p = PLACES[id];
+    minX = Math.min(minX, p.x); maxX = Math.max(maxX, p.x);
+    minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y);
+  });
+  const cx = (ox + (minX + maxX) / 2 * s) / W;
+  const cy = (oy + (minY + maxY) / 2 * s) / H;
+  const w = Math.max((maxX - minX) * s / W, .14);
+  const h = Math.max((maxY - minY) * s / H, .14);
+  const z = Math.min(2.9, Math.max(1, .72 / Math.max(w, h)));
+  setZoom(z, cx, cy);
+}
+function setZoom(z, cx, cy){
+  zoomState = {z, tx: (0.5 - cx * z) * 100, ty: (0.5 - cy * z) * 100};
+  mapInner.style.transform = `translate(${zoomState.tx}%,${zoomState.ty}%) scale(${z})`;
+  positionLabels();
+}
+function positionLabels(){
+  const st = mapStage.getBoundingClientRect();
+  const W = st.width || 1, H = st.height || 1;
+  const s = Math.min(W / 1000, H / 740);
+  const ox = (W - 1000 * s) / 2, oy = (H - 740 * s) / 2;
+  const {z, tx, ty} = zoomState;
+  $$('#mapLabels .mlab').forEach(l => {
+    const x = +l.dataset.fx * 1000, y = +l.dataset.fy * 740;
+    const px = ox + x * s, py = oy + y * s;
+    l.style.left = ((px * z + tx / 100 * W) / W) * 100 + '%';
+    l.style.top = ((py * z + ty / 100 * H) / H) * 100 + '%';
+  });
+}
+
+mapCtrl.addEventListener('click', e => {
+  const b = e.target.closest('.chip');
+  if (!b) return;
+  renderMap(b.dataset.day);
+});
+window.addEventListener('resize', () => positionLabels());
+renderMap('all');
+
+/* ============================================================
+   弹层：景点介绍
+   ============================================================ */
+const mask = $('#mask'), sheet = $('#sheet');
+let lastFocus = null;
+function openSheet(pid){
+  const pl = PLACES[pid];
+  if (!pl) return;
+  lastFocus = document.activeElement;
+  $('#sheetName').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(pl.n + ' 日本');
+  $('#sheetNameTxt').textContent = pl.n;
+  $('#sheetOne').textContent = pl.one;
+  $('#sheetMust').innerHTML = (pl.must || []).map(m => `<li>${m}</li>`).join('');
+  $('#sheetTip').textContent = pl.tip || '';
+  mask.classList.add('on'); sheet.classList.add('on');
+  $('#sheetX').focus();
+}
+function closeSheet(){
+  mask.classList.remove('on'); sheet.classList.remove('on');
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+mask.addEventListener('click', closeSheet);
+$('#sheetX').addEventListener('click', closeSheet);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+
+/* ============================================================
+   逐日行程
+   ============================================================ */
+const checks = store.get('tk2-checks', {});
+const daysEl = $('#days');
+
+function renderDays(){
+  daysEl.innerHTML = DAYS.map(d => {
+    const items = d.items.map((it, i) => {
+      const id = `d${d.n}-${i}`;
+      const done = !!checks[id];
+      const tags = (it.tags || []).map(t => {
+        const cls = t === '注意' ? 'warn' : t === '需提前订' ? 'book' : t === '航班' ? 'flight' : '';
+        return `<span class="tag ${cls}">${t}</span>`;
+      });
+      if (it.pid) tags.push(`<button class="tag act js-intro" data-pid="${it.pid}">介绍</button>`);
+      if (it.pid) tags.push(`<a class="tag act" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(PLACES[it.pid].n + ' 日本')}" target="_blank" rel="noopener">导航</a>`);
+      return `
+      ${i > 0 && it.leg && it.leg.min > 0 ? `<li class="leg"><span class="cap">${it.leg.mode ? it.leg.mode + ' · ' : ''}约 ${it.leg.min} 分钟</span></li>` : ''}
+      <li class="item${done ? ' done' : ''}" data-id="${id}">
+        <div class="it-time"><span class="t">${it.t}</span><span class="tz">JST</span></div>
+        <div class="it-rail"><i></i></div>
+        <div class="it-body">
+          <div class="it-head">
+            <h4>${it.title}</h4>
+            <button class="chk" data-id="${id}" aria-pressed="${done}" aria-label="打卡" title="打卡 / 已去过">${done ? '✓' : '○'}</button>
+          </div>
+          <div class="it-tags">${tags.join('')}</div>
+          ${it.note ? `<p class="it-note">${it.note}</p>` : ''}
+        </div>
+      </li>`;
+    }).join('');
+
+    const ids = dayPlaces(d);
+    return `
+    <article class="day open" data-day="${d.n}" style="--dc:${d.color}">
+      <button class="day-head" aria-expanded="true">
+        <span class="dnum">D${d.n}</span>
+        <span class="dmeta"><b>${d.date} ${d.wd}</b><em>${d.city} · ${d.title}</em></span>
+        <span class="dprog" data-prog="${d.n}">0/${d.items.length}</span>
+        <span class="dchev">▾</span>
+      </button>
+      <div class="day-body">
+        <ol class="items">${items}</ol>
+        <div class="day-foot">
+          ${ids.length > 1 ? miniMap(ids, d.color) : ''}
+          <div class="stay"><b>住宿</b><span>${d.stay.name} · ${d.stay.area}</span><span class="st">${d.stay.note}</span></div>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+  updateProgress();
+}
+
+function miniMap(ids, color){
+  const pts = ids.map(id => [PLACES[id].x, PLACES[id].y]);
+  let minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
+  pts.forEach(([x, y]) => { minX = Math.min(minX, x); maxX = Math.max(maxX, x); minY = Math.min(minY, y); maxY = Math.max(maxY, y); });
+  const w = Math.max(maxX - minX, 1), h = Math.max(maxY - minY, 1);
+  const span = Math.max(w, h);
+  const pad = span * 0.26 + 8;
+  const vb = `${(minX - pad).toFixed(1)} ${(minY - pad).toFixed(1)} ${(w + pad * 2).toFixed(1)} ${(h + pad * 2).toFixed(1)}`;
+  const r = (span * 0.032 + 1.6).toFixed(1);
+  const sw = (span * 0.012 + 0.8).toFixed(1);
+  const d = smoothPath(pts);
+  const dots = pts.map(([x, y], i) =>
+    `<circle cx="${x}" cy="${y}" r="${r}" fill="var(--bg2)" stroke="${color}" stroke-width="${sw}"/>` +
+    (i === 0 ? `<text x="${x}" y="${y - pad * 0.42}" font-size="${(span * 0.1).toFixed(1)}" fill="var(--muted)" text-anchor="middle">出发</text>` : '')
+  ).join('');
+  return `<svg class="mini" viewBox="${vb}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="当日路线小图">
+    <path d="${d}" fill="none" stroke="${color}" stroke-width="${sw}" stroke-dasharray="${(span * 0.05 + 3).toFixed(1)} ${(span * 0.04 + 3).toFixed(1)}" stroke-linecap="round" opacity=".85"/>${dots}
+  </svg>`;
+}
+
+/* 折叠 */
+daysEl.addEventListener('click', e => {
+  const head = e.target.closest('.day-head');
+  if (head){
+    const art = head.closest('.day');
+    art.classList.toggle('open');
+    head.setAttribute('aria-expanded', String(art.classList.contains('open')));
+    return;
+  }
+  const intro = e.target.closest('.js-intro');
+  if (intro){ openSheet(intro.dataset.pid); return; }
+  const chk = e.target.closest('.chk');
+  if (chk){
+    const id = chk.dataset.id;
+    checks[id] = !checks[id];
+    store.set('tk2-checks', checks);
+    chk.closest('.item').classList.toggle('done', checks[id]);
+    chk.setAttribute('aria-pressed', String(!!checks[id]));
+    chk.textContent = checks[id] ? '✓' : '○';
+    updateProgress();
+  }
+});
+
+function updateProgress(){
+  DAYS.forEach(d => {
+    const total = d.items.length;
+    let done = 0;
+    d.items.forEach((_, i) => { if (checks[`d${d.n}-${i}`]) done++; });
+    const el = document.querySelector(`[data-prog="${d.n}"]`);
+    if (el){
+      el.textContent = `${done}/${total}`;
+      el.classList.toggle('full', done === total);
+    }
+  });
+}
+
+/* 默认展开：桌面全开，手机只开第一天 */
+renderDays();
+if (window.innerWidth < 760){
+  $$('.day', daysEl).forEach((el, i) => {
+    if (i > 0) el.classList.remove('open');
+    const h = el.querySelector('.day-head');
+    if (h) h.setAttribute('aria-expanded', String(i === 0));
+  });
+}
+
+/* ============================================================
+   票据 / 住宿 / 待办 / 贴士
+   ============================================================ */
+$('#tickList').innerHTML = TICKETS.map(tk => `
+  <div class="row" style="--dc:${tk.c}">
+    <div class="rt">${tk.t}</div>
+    <span class="pill">${tk.s}</span>
+    <div class="rd"><span>${tk.d}</span><span>${tk.x}</span><span>班次 <b>待补充</b></span><span>座位 <b>待补充</b></span></div>
+  </div>`).join('');
+
+$('#stayBody').innerHTML = STAYS.map(r => `
+  <tr>
+    <td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td>
+    <td>${r[3]}</td><td><small>${r[4]}</small></td>
+  </tr>`).join('');
+
+const todoState = store.get('tk2-todos', {});
+$('#todoList').innerHTML = TODOS.map((t, i) => `
+  <label class="todo">
+    <input type="checkbox" data-i="${i}" ${todoState[i] ? 'checked' : ''}>
+    <span>${t[0]}<em>${t[1]}</em></span>
+  </label>`).join('');
+function updateTodo(){
+  const boxes = $$('#todoList input');
+  const done = boxes.filter(b => b.checked).length;
+  $('#todoHint').textContent = `${done} / ${boxes.length}`;
+}
+$('#todoList').addEventListener('change', e => {
+  if (e.target.matches('input')){
+    todoState[e.target.dataset.i] = e.target.checked;
+    store.set('tk2-todos', todoState);
+    updateTodo();
+  }
+});
+updateTodo();
+
+$('#tipList').innerHTML = TIPS.map(([h, p]) => `<div class="tip"><h4>${h}</h4><p>${p}</p></div>`).join('');
+
+/* 导航链接锚点平滑滚动（原生已支持，这里处理顶栏高度补偿） */
+document.querySelectorAll('.bar-nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    const el = document.querySelector(a.getAttribute('href'));
+    if (!el) return;
+    e.preventDefault();
+    const y = el.getBoundingClientRect().top + window.scrollY - 64;
+    window.scrollTo({top: y, behavior: 'smooth'});
+  });
+});
+</script>
+</body>
+</html>
